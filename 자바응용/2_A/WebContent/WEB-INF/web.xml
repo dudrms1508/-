@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>2_A</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+  	<servlet-name>servletConfig</servlet-name>
+  	<servlet-class>org.apache.jasper.servlet.JspServlet</servlet-class>
+  	
+  	<init-param>
+  		<param-name>adminId</param-name>
+  		<param-value>admin</param-value>
+  		</init-param>
+  		<init-param>
+  			<param-name>adminPw</param-name>
+  			<param-value>1234</param-value>
+  			</init-param>
+  			</servlet>
+  			<servlet-mapping>
+  				<servlet-name>servletConfig</servlet-name>
+  				<url-pattern>*.jsp</url-pattern>
+  				</servlet-mapping>
+  
+	<context-param>
+		<param-name>iamDir</param-name>
+		<param-value>/upload/img</param-value>
+	</context-param>
+	<context-param>
+		<param-name>testServerIP</param-name>
+		<param-value>127.0.01</param-value>
+	</context-param>
+	<context-param>
+		<param-name>realServerIP</param-name>
+		<param-value>68.0.30.1</param-value>
+	</context-param>
+
+<!-- ch13 에서 사용 -->
+	<context-param>
+		<param-name>encoding</param-name>
+		<param-value>utf-8</param-value>
+	</context-param>
+	<context-param>
+		<param-name>name3</param-name>
+		<param-value>향단이</param-value>
+	</context-param>
+	<context-param>
+		<param-name>workspace</param-name>
+		<param-value>c:\dev\workspace</param-value>
+	</context-param>
+	
+<servlet>
+	<servlet-name>ProtertyTest</servlet-name>
+	<servlet-class>ch13.PropertyServlet</servlet-class>
+	<init-param>
+		<param-name>name1</param-name>
+		<param-value>홍길동</param-value>
+	</init-param>
+	<init-param>
+		<param-name>name2</param-name>
+		<param-value>춘향이</param-value>
+	</init-param>	
+</servlet>
+
+<servlet-mapping>
+	<servlet-name>ProtertyTest</servlet-name>
+	<url-pattern>/ProtertyServlet</url-pattern>
+</servlet-mapping>
+
+<!-- Servlet에서 mapping을 시킬 경우 url에는 경로가 들어가지 않으며 서블릿 이름을 사용
+form 에서는 경로를 사용 -->
+</web-app>
